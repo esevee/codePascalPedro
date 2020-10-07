@@ -16,6 +16,9 @@
             background-color: #11329e;
             width: 50%;
             margin: 4em auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         li{
             padding: 1em;
@@ -26,20 +29,43 @@
             border-radius: .5em;
             list-style: none;
         }
+        #todo{
+            color: white;
+            font-size: 25pt;
+            text-align: center;
+            margin: 1em auto;
+            border: solid black 1px;
+        }
+        input{
+            background-color: transparent;
+            color: white;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
     
     <ul>
+        <div>
         <li><i class="fas fa-check-double"></i> Dancing in the Rain</li>
         <li> <i class="fas fa-check-double"></i> Sleeping on a bicycle</li>
         <li><i class="fas fa-check-double"></i> Lorem, ipsum dolor.</li>
         <li><i class="fas fa-check-double"></i> Lorem, ipsum dolor.</li>
         <li><i class="fas fa-check-double"></i> Lorem, ipsum dolor.</li>
+        </div>
+        <span id="todo"><i></i> + Add TODO</span>
     </ul>
     <script>
+
         $(document).ready(function() {
-        $('li').on('click', function() {
+            $('#todo').on('click', function(){
+          
+            $("div").append(`<li id= "newTodo"><i class="fas fa-check-double"></i> <input type= "text"></input></li>`);
+
+            //We use double click to allow user to type into the form
+            $('#newTodo').on('dblclick', function() {
                 $(this).animate({
                         opacity: 0.0,
                         paddingLeft: '+=80'
@@ -47,7 +73,19 @@
                         $(this).remove();
                     });
                 });
+            })
         });
+
+        $('li').on('click', function() {
+                $(this).animate({
+                        opacity: 0.0,
+                        paddingLeft: '+=80'
+                    }, 500, function() {
+                        $(this).remove();
+                    });
+
+                });
+        
     </script>
 </body>
 </html>
