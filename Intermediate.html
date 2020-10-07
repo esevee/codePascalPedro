@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Intermediate Exercise</title>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="products.json"></script>
+	<style>
+		main{
+			display: flex;
+			flex-wrap: wrap;
+
+		}
+		h1{
+			text-align: center;
+		}
+		div{
+			width: 33%;
+			height: auto;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			font-size: 30pt;
+			margin-bottom: 10vh;
+		}
+		img{
+			height: 270px;
+			width: 300px;
+			
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome to the Tech Store!</h1>
+	<main></main>
+
+
+<script>
+	$(document).ready(function(){
+	var productArr = JSON.parse(products);
+	console.table(productArr);
+	for(let i =0; i<productArr.length;i++){
+		$('main').append(`<div class = "productDiv"> 
+			<img src="${productArr[i].image}">
+			<span> ${productArr[i].name} </span>
+			<span> €${productArr[i].price} </span>
+			<button id = "btn${i}">Order here</button>
+		</div>
+			`);
+
+		$("#btn"+i).on("click",function(){
+			console.log(productArr[i].quantity);
+			var temp = Number(productArr[i].quantity);
+			temp --;
+			temp.toString();
+			productArr[i].quantity = temp; 
+		})
+
+	}
+})
+</script>
+</body>
+</html>

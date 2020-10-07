@@ -1,0 +1,43 @@
+var products = `[{
+	"name": "Notebook Apple",
+	"price": "700",
+	"description": "notebook",
+	"image": "manipulating_images/notebook_apple.png",
+	"quantity": "100"
+},
+{
+	"name": "Notebook Samsung",
+	"price": "500",
+	"description": "notebook",
+	"image": "manipulating_images/notebook_samsung.png",
+	"quantity": "20"
+},
+{
+	"name": "Iphone",
+	"price": "300",
+	"description": "phone",
+	"image": "manipulating_images/phone_iphone.png",
+	"quantity": "5"
+},
+{
+	"name": "Samsung phone",
+	"price": "200",
+	"description": "phone",
+	"image": "manipulating_images/phone_samsung.png",
+	"quantity": "23"
+},
+{
+	"name": "Ipad Tablet",
+	"price": "500",
+	"description": "tablet",
+	"image": "manipulating_images/tablet_ipad.png",
+	"quantity": "50"
+},
+{
+	"name": "Samsung Tablet",
+	"price": "400",
+	"description": "tablet",
+	"image": "manipulating_images/tablet_samsung.png",
+	"quantity": "200"
+}
+]`
